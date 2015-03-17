@@ -1,6 +1,6 @@
 # Menus
 
-User contributed beer menus.
+User contributed beer menus, in real time.
 
 ## Prerequisites
 

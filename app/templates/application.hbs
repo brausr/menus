@@ -1,3 +1,44 @@
-<h2 id="title">Welcome to Ember.js</h2>
+{{#paper-nav-container classNames="ember-app"}}
 
-{{outlet}}
+  {{#paper-sidenav classNames="md-sidenav-left md-whiteframe-z2" flex-layout="column" flex=true}}
+
+    {{#paper-toolbar}}
+      <div class="md-toolbar-tools">
+        <div class="logo">
+          <strong>Brausr</strong>
+        </div>
+      </div>
+    {{/paper-toolbar}}
+
+    {{#paper-content}}
+      <nav class="sidenav">
+        <ul>
+          <li>{{#link-to 'places'}}{{#paper-icon icon="location" size="lg"}}{{/paper-icon}} Nearby{{/link-to}}</li>
+          <li>{{#link-to 'favorites'}}{{#paper-icon icon="favorite" size="lg"}}{{/paper-icon}} Favorites{{/link-to}}</li>
+          <li>{{#link-to 'settings'}}{{#paper-icon icon="settings" size="lg"}}{{/paper-icon}} Settings{{/link-to}}</li>
+        </ul>
+      </nav>
+    {{/paper-content}}
+  {{/paper-sidenav}}
+
+  {{#paper-content flex-layout="column" flex=true}}
+
+      {{#paper-toolbar}}
+        <div class="md-toolbar-tools">
+
+          {{#paper-sidenav-toggle}}
+            {{#paper-icon icon="menu" size="lg"}}{{/paper-icon}}
+          {{/paper-sidenav-toggle}}
+
+          {{currentPath}}
+
+        </div>
+      {{/paper-toolbar}}
+
+      {{#paper-content classNames="md-padding"}}
+        {{outlet}}
+      {{/paper-content}}
+
+  {{/paper-content}}
+
+{{/paper-nav-container}}

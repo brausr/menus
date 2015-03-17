@@ -4,6 +4,15 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'menus',
     environment: environment,
+    contentSecurityPolicy: {
+        'connect-src': "'self' wss://*.firebaseio.com",
+        'default-src': "'none'",
+        'script-src': "'self'",
+        'font-src': "'self' https://fonts.gstatic.com",
+        'img-src': "'self'",
+        'media-src': "'self'"
+    },
+    firebase: 'https://amber-fire-4627.firebaseio.com/',
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {

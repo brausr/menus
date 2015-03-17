@@ -1,0 +1,29 @@
+.sidenav {
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        li > a {
+            display: block;
+            font-size: 14px;
+            text-decoration: none;
+            color: $brand-secondary-text;
+            font-weight: 700;
+            padding: 1.1em 1.6em;
+        }
+
+        li > a.active {
+            background-color: $brand-primary-light;
+            color: $brand-primary-dark;
+        }
+    }
+}
+
+.paper-sidenav-toggle {
+
+    .paper-icon {
+        margin-right: 16px;
+    }
+}

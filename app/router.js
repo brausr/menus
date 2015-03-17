@@ -6,6 +6,10 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+    this.resource('places');
+    this.resource('favorites');
+
+    this.route('settings');
 });
 
 export default Router;

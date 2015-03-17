@@ -1,0 +1,22 @@
+.ember-app {
+    height: 100%;
+    width: 100%;
+}
+
+// TODO workaround for ember-paper side nav
+body > div:nth-of-type(1) {
+    height: 100%;
+}
+
+// TODO When ember-paper is themeable, remove
+$brand-primary-dark: #5D4037;
+$brand-primary: #795548;
+$brand-primary-light: #D7CCC8;
+$brand-accent: #FF9800;
+$brand-primary-text: #212121;
+$brand-secondary-text: #727272;
+$brand-divider: #B6B6B6;
+
+md-toolbar.md-default-theme {
+    background-color: $brand-primary;
+}
