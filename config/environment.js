@@ -5,14 +5,19 @@ module.exports = function(environment) {
     modulePrefix: 'menus',
     environment: environment,
     contentSecurityPolicy: {
-        'connect-src': "'self' wss://*.firebaseio.com",
+        'connect-src': "'self' wss://*.firebaseio.com maps.gstatic.com",
         'default-src': "'none'",
-        'script-src': "'self'",
-        'font-src': "'self' https://fonts.gstatic.com",
-        'img-src': "'self'",
-        'media-src': "'self'"
+        'script-src': "'self' 'unsafe-eval' *.googleapis.com maps.gstatic.com",
+        'font-src': "'self' fonts.gstatic.com",
+        'img-src': "'self' *.googleapis.com maps.gstatic.com csi.gstatic.com placehold.it",
+        'media-src': "'self'",
+        'style-src': "'self' 'unsafe-inline' fonts.googleapis.com maps.gstatic.com"
     },
     firebase: 'https://amber-fire-4627.firebaseio.com/',
+    googleMap: {
+        apiKey: 'AIzaSyC4HGtjwmR5zmmgFcUSO9kVsD6fxKSaA2I',
+        libraries: ['places']
+    },
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {
