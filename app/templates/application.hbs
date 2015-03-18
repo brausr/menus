@@ -5,7 +5,7 @@
     {{#paper-toolbar}}
       <div class="md-toolbar-tools">
         <div class="logo">
-          <strong>Brausr</strong>
+          <strong>{{link-to 'Brausr' 'index'}}</strong>
         </div>
       </div>
     {{/paper-toolbar}}
@@ -13,7 +13,7 @@
     {{#paper-content}}
       <nav class="sidenav">
         <ul>
-          <li><a href="#">Item 1</a></li>
+          <li>{{#link-to 'places.index'}}{{#paper-icon icon="place" size="lg"}}{{/paper-icon}} Places{{/link-to}}</li>
           <li><a href="#">Item 2</a></li>
         </ul>
       </nav>

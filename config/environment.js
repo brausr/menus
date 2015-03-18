@@ -13,6 +13,7 @@ module.exports = function(environment) {
         'media-src': "'self'",
         'style-src': "'self' 'unsafe-inline' fonts.googleapis.com maps.gstatic.com"
     },
+    // TODO create test/production instances
     firebase: 'https://amber-fire-4627.firebaseio.com/',
     googleMap: {
         apiKey: 'AIzaSyC4HGtjwmR5zmmgFcUSO9kVsD6fxKSaA2I',

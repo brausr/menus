@@ -6,10 +6,16 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-    this.resource('places');
-    this.resource('favorites');
+    // places
+    this.resource('places', function () {
+      this.route('add');
+    });
 
-    this.route('settings');
+    this.resource('place', { path: 'place/:id' }, function () {
+      this.route('edit');
+    });
+
+    // ...
 });
 
 export default Router;
