@@ -15,6 +15,11 @@ Router.map(function() {
       this.route('edit');
     });
 
+    // Favorites
+    this.resource('favorites', function () {
+
+    });
+
     // ...
 });
 
