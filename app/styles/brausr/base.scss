@@ -20,6 +20,14 @@ body > div:nth-of-type(3) {
     overflow-x: hidden;
 }
 
+.row-bottom {
+    margin-bottom: 25px;
+}
+
+.row-top {
+    margin-top: 25px;
+}
+
 // TODO When ember-paper is themeable, remove
 $brand-primary-dark: #5D4037;
 $brand-primary: #795548;
@@ -29,14 +37,50 @@ $brand-primary-text: #212121;
 $brand-secondary-text: #727272;
 $brand-divider: #B6B6B6;
 
+a {
+    color: $brand-primary !important;
+    font-weight: bold;
+
+    &:hover {
+        color: $brand-primary-dark !important;
+    }
+}
+
+div.logo a {
+    color: #FFF !important;
+    &:hover {
+        color: $brand-accent !important;
+    }
+}
+
+// button overrides
+.md-button.md-default-theme.md-raised.md-primary, .md-button.md-default-theme.md-fab.md-primary {
+    background-color: $brand-primary !important;
+
+    &:hover {
+        background-color: darken($brand-primary, 5%) !important;
+    }
+}
+
+.md-button.md-default-theme.md-primary {
+    color: $brand-primary-dark;
+}
+
+.md-button.md-default-theme[disabled], .md-button.md-default-theme.md-raised[disabled], .md-button.md-default-theme.md-fab[disabled] {
+    color: $brand-divider !important;
+    fill: $brand-divider !important;
+}
+
+.md-button.md-default-theme.md-warn {
+    color: $brand-accent !important;
+}
+
+// toolbar overrides
 md-toolbar.md-default-theme {
-    background-color: $brand-primary;
+    background-color: $brand-primary !important;
 }
 
-.row-bottom {
-    margin-bottom: 25px;
-}
-
-.row-top {
-    margin-top: 25px;
+// checkbox overrides
+md-checkbox.md-default-theme.md-checked .md-icon {
+    background-color: $brand-accent !important;
 }

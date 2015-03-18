@@ -7,17 +7,46 @@
             <img {{bind-attr src=model.img alt=model.name}}>
             {{#paper-card-content}}
                 <h2>{{model.name}}</h2>
-                <p>Description</p>
-                <p>Facebook, Google, Twitter, Instagram, Website</p>
+                <p class="place-tagline">The drinkin'est place in town!</p>
+                <div class="pull-right">
+                    {{#paper-button classNames="md-warn"}}Delete{{/paper-button}}
+                    {{#paper-button raised=true classNames="md-primary"}}Edit{{/paper-button}}
+                </div>
             {{/paper-card-content}}
         {{/paper-card}}
 
         <!-- Location -->
         {{#paper-card}}
-            <img {{bind-attr src=model.img alt=model.name}}>
+            <img src="https://maps.googleapis.com/maps/api/staticmap?size=450x144&scale=2&zoom=13&key=AIzaSyC4HGtjwmR5zmmgFcUSO9kVsD6fxKSaA2I&sensor=false&markers=color:orange%7Clabel:P%7C39.95022100,-75.16658300" alt="Location">
             {{#paper-card-content}}
-                <h2>Details</h2>
-                <p>Phone, Location, Hours</p>
+                <div class="row">
+                    <div class="col-lg-8">
+                        <address>
+                            123 Fake St.<br />
+                            Anytown, PA 19382<br />
+                            <abbr title="Phone">P:</abbr> <a href="#">215-267-2222</a>
+                        </address>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <a href="#">{{paper-icon icon="link" size="lg"}}</a>
+                                <a href="#">{{paper-icon icon="post-facebook" size="lg"}}</a>
+                                <a href="#">{{paper-icon icon="post-gplus" size="lg"}}</a>
+                                <a href="#">{{paper-icon icon="post-twitter" size="lg"}}</a>
+                                <a href="#">{{paper-icon icon="post-tumblr" size="lg"}}</a>
+                                <a href="#">{{paper-icon icon="post-instagram" size="lg"}}</a>
+                                <a href="#">{{paper-icon icon="post-pinterest" size="lg"}}</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <strong>Hours</strong>
+                        <ul class="place-hours">
+                            <li>M-F: 11-2am</li>
+                            <li>Sat: 10-2am</li>
+                            <li>Sun: 2pm-10pm</li>
+                        </ul>
+                    </div>
+                </div>
             {{/paper-card-content}}
         {{/paper-card}}
 
@@ -35,26 +64,32 @@
         {{#paper-content classNames="md-whiteframe-z1 list-demo"}}
             {{#paper-list}}
                 {{#each beer in model.menu}}
-                    {{#paper-item}}
+                    <div {{bind-attr class="beer.verified::unverified-beer"}}>
+                        {{#paper-item}}
 
-                        {{#paper-tile-left}}
-                            <img {{bind-attr src=beer.img alt=beer.name}} class="avatar">
-                        {{/paper-tile-left}}
+                            {{#paper-tile-left}}
+                                {{#if beer.verified}}
+                                    <img {{bind-attr src=beer.img alt=beer.name}} class="avatar">
+                                {{else}}
+                                    {{paper-checkbox value=beer.verified}}
+                                {{/if}}
+                            {{/paper-tile-left}}
 
-                        {{#paper-tile-content}}
-                            <h3>{{#link-to 'beer.index' beer}}{{beer.name}}{{/link-to}}</h3>
-                            <h4>{{beer.style}}</h4>
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 list-left-detail text-muted">
-                                    XYZ
+                            {{#paper-tile-content}}
+                                <h3>{{#link-to 'beer.index' beer}}{{beer.name}}{{/link-to}}</h3>
+                                <h4>Brewery Name</h4>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 list-left-detail text-muted">
+                                        {{beer.style}} &sdot; {{beer.abv}}%
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 list-right-detail text-muted">
+                                        <a href="#">{{paper-icon icon="delete" size="lg"}}</a>
+                                    </div>
                                 </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 list-right-detail text-muted">
-                                    1234
-                                </div>
-                            </div>
-                        {{/paper-tile-content}}
+                            {{/paper-tile-content}}
 
-                    {{/paper-item}}
+                        {{/paper-item}}
+                    </div>
                     {{paper-divider}}
               {{/each}}
             {{/paper-list}}

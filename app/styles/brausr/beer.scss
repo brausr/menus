@@ -1,0 +1,16 @@
+.center-cropped {
+    object-fit: none;
+    object-position: center;
+}
+
+.beer-detail-card {
+
+    h2 {
+        margin-bottom: 0;
+    }
+
+    h4 {
+        font-style: italic;
+        margin-top: 0;
+    }
+}

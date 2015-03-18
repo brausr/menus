@@ -9,7 +9,7 @@ module.exports = function(environment) {
         'default-src': "'none'",
         'script-src': "'self' 'unsafe-eval' *.googleapis.com maps.gstatic.com",
         'font-src': "'self' fonts.gstatic.com",
-        'img-src': "'self' *.googleapis.com maps.gstatic.com csi.gstatic.com placehold.it",
+        'img-src': "'self' *.googleapis.com maps.gstatic.com csi.gstatic.com placehold.it s3.amazonaws.com",
         'media-src': "'self'",
         'style-src': "'self' 'unsafe-inline' fonts.googleapis.com maps.gstatic.com"
     },
