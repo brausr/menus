@@ -1,16 +1,28 @@
 <div class="row">
-    <!-- Places -->
+    <!-- Details -->
+    <div class="col-lg-6 row-bottom">
+
+        <!-- Details -->
+        {{#paper-card}}
+            <img {{bind-attr src=model.img alt=model.name}}>
+            {{#paper-card-content}}
+                <h2>{{model.name}}</h2>
+                <h4>{{model.brewery}}</h4>
+                <p>{{model.desc}}</p>
+                <!-- TODO ABV, IBU, etc. -->
+            {{/paper-card-content}}
+        {{/paper-card}}
+
+    </div>
+
+    <!-- Menu -->
     <div class="col-lg-6">
 
-        <div class="row row-bottom">
-            <div class="col-lg-4">
-                {{#paper-button raised=true classNames="md-primary"}}Add Place{{/paper-button}}
-            </div>
-        </div>
+        <h3>Available at these places nearby:</h3>
 
         {{#paper-content classNames="md-whiteframe-z1 list-demo"}}
             {{#paper-list}}
-                {{#each place in model}}
+                {{#each place in model.places}}
                     {{#paper-item}}
 
                         {{#paper-tile-left}}
@@ -32,25 +44,17 @@
 
                     {{/paper-item}}
                     {{paper-divider}}
-              {{/each}}
+                {{else}}
+                    {{#paper-item}}
+
+                        {{#paper-tile-content}}
+                            None :-(
+                        {{/paper-tile-content}}
+
+                    {{/paper-item}}
+                {{/each}}
             {{/paper-list}}
         {{/paper-content}}
 
-        <div class="row row-top">
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                {{#paper-button noink=true disabled=true classNames="md-primary"}}&#171; Previous{{/paper-button}}
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 paging-info text-muted">
-                Page 1 of 150
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                {{#paper-button noink=true classNames="md-primary pull-right"}}Next &#187;{{/paper-button}}
-            </div>
-        </div>
-    </div>
-
-    <!-- Map -->
-    <div class="col-lg-6 visible-lg">
-        Placeholder
     </div>
 </div>

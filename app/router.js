@@ -20,6 +20,14 @@ Router.map(function() {
 
     });
 
+    // Beer
+    this.resource('beer', { path: 'beer/:id' }, function () {
+
+    });
+
+    // Settings
+    this.route('settings');
+
     // ...
 });
 

@@ -1,3 +1,27 @@
-<div class="col-lg-12">
-    Favorites
+<div class="row">
+    <!-- Cards -->
+    <div class="col-lg-6 row-bottom">
+        <!-- Beers -->
+        {{#paper-card}}
+            <img src="http://placehold.it/150x48" alt="Favorite Beers">
+            {{#paper-card-content}}
+                <h2>Favorite Beers</h2>
+                <h4>{{model.beers.length}}</h4>
+            {{/paper-card-content}}
+        {{/paper-card}}
+
+        <!-- Places -->
+        {{#paper-card}}
+            <img src="http://placehold.it/150x48" alt="Favorite Beers">
+            {{#paper-card-content}}
+                <h2>Favorite Places</h2>
+                <h4>{{model.places.length}}</h4>
+            {{/paper-card-content}}
+        {{/paper-card}}
+    </div>
+
+    <!-- placeholder -->
+    <div class="col-lg-6">
+        Placeholder
+    </div>
 </div>

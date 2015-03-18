@@ -1,3 +1,4 @@
+// Side Navigation
 .sidenav {
 
     ul {
@@ -26,4 +27,18 @@
     .paper-icon {
         margin-right: 16px;
     }
+}
+
+// List
+.avatar {
+    border-radius: 30px;
+    border: 1px solid #ddd;
+    width: 48px;
+    margin: 16px;
+}
+
+// Buttons
+.md-button {
+    min-width: 10em;
+    line-height: 25px;
 }

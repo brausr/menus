@@ -12,6 +12,14 @@ body > div:nth-of-type(3) {
     height: 100%;
 }
 
+.md-content {
+    overflow-x: hidden;
+}
+
+.paper-content {
+    overflow-x: hidden;
+}
+
 // TODO When ember-paper is themeable, remove
 $brand-primary-dark: #5D4037;
 $brand-primary: #795548;
@@ -23,4 +31,12 @@ $brand-divider: #B6B6B6;
 
 md-toolbar.md-default-theme {
     background-color: $brand-primary;
+}
+
+.row-bottom {
+    margin-bottom: 25px;
+}
+
+.row-top {
+    margin-top: 25px;
 }

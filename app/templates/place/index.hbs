@@ -1,3 +1,64 @@
-<div class="col-lg-12">
-    Place Detail
+<div class="row">
+    <!-- Details -->
+    <div class="col-lg-6 row-bottom">
+
+        <!-- Details -->
+        {{#paper-card}}
+            <img {{bind-attr src=model.img alt=model.name}}>
+            {{#paper-card-content}}
+                <h2>{{model.name}}</h2>
+                <p>Description</p>
+                <p>Facebook, Google, Twitter, Instagram, Website</p>
+            {{/paper-card-content}}
+        {{/paper-card}}
+
+        <!-- Location -->
+        {{#paper-card}}
+            <img {{bind-attr src=model.img alt=model.name}}>
+            {{#paper-card-content}}
+                <h2>Details</h2>
+                <p>Phone, Location, Hours</p>
+            {{/paper-card-content}}
+        {{/paper-card}}
+
+    </div>
+
+    <!-- Menu -->
+    <div class="col-lg-6">
+
+        <div class="row row-bottom">
+            <div class="col-lg-4">
+                {{#paper-button raised=true classNames="md-primary"}}Add Beer{{/paper-button}}
+            </div>
+        </div>
+
+        {{#paper-content classNames="md-whiteframe-z1 list-demo"}}
+            {{#paper-list}}
+                {{#each beer in model.menu}}
+                    {{#paper-item}}
+
+                        {{#paper-tile-left}}
+                            <img {{bind-attr src=beer.img alt=beer.name}} class="avatar">
+                        {{/paper-tile-left}}
+
+                        {{#paper-tile-content}}
+                            <h3>{{#link-to 'beer.index' beer}}{{beer.name}}{{/link-to}}</h3>
+                            <h4>{{beer.style}}</h4>
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 list-left-detail text-muted">
+                                    XYZ
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 list-right-detail text-muted">
+                                    1234
+                                </div>
+                            </div>
+                        {{/paper-tile-content}}
+
+                    {{/paper-item}}
+                    {{paper-divider}}
+              {{/each}}
+            {{/paper-list}}
+        {{/paper-content}}
+
+    </div>
 </div>
