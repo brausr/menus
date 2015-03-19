@@ -1,0 +1,46 @@
+{{yield}}
+{{#paper-content classNames="md-whiteframe-z1 list-demo"}}
+    {{#paper-list}}
+        {{#each place in places}}
+            <div {{bind-attr class="place.verified::unverified"}}>
+                {{#paper-item}}
+
+                    {{#paper-tile-left}}
+                        {{#if place.verified}}
+                            <img {{bind-attr src=place.img alt=place.name}} class="avatar">
+                        {{else}}
+                            {{paper-checkbox value=place.verified}}
+                        {{/if}}
+                    {{/paper-tile-left}}
+
+                    {{#paper-tile-content}}
+                        <h3>{{#link-to 'place.index' place}}{{place.name}}{{/link-to}}</h3>
+                        <h4>Beers: {{place.menu.length}}</h4>
+                        <div class="row">
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 list-left-detail text-muted">
+                                Updated {{place.updated}} &sdot; 5.2 miles away
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 list-right-detail text-muted">
+                                <a href="#">{{paper-icon icon="delete" size="lg"}}</a>
+                            </div>
+                        </div>
+                    {{/paper-tile-content}}
+
+                {{/paper-item}}
+            </div>
+            {{paper-divider}}
+      {{/each}}
+    {{/paper-list}}
+{{/paper-content}}
+
+<div class="row row-top">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+        {{#paper-button noink=true disabled=true classNames="md-primary"}}&#171; Previous{{/paper-button}}
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 paging-info text-muted">
+        Page 1 of 150
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+        {{#paper-button noink=true classNames="md-primary pull-right"}}Next &#187;{{/paper-button}}
+    </div>
+</div>

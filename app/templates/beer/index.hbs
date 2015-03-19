@@ -39,48 +39,7 @@
     <div class="col-lg-6">
 
         <h3>Available at these places nearby:</h3>
-
-        {{#paper-content classNames="md-whiteframe-z1 list-demo"}}
-            {{#paper-list}}
-                {{#each place in model.places}}
-                    <div {{bind-attr class="place.verified::unverified"}}>
-                        {{#paper-item}}
-
-                            {{#paper-tile-left}}
-                                {{#if place.verified}}
-                                    <img {{bind-attr src=place.img alt=place.name}} class="avatar">
-                                {{else}}
-                                    {{paper-checkbox value=place.verified}}
-                                {{/if}}
-                            {{/paper-tile-left}}
-
-                            {{#paper-tile-content}}
-                                <h3>{{#link-to 'place.index' place}}{{place.name}}{{/link-to}}</h3>
-                                <h4>Beers: {{place.menu.length}}</h4>
-                                <div class="row">
-                                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 list-left-detail text-muted">
-                                        Updated {{place.updated}} &sdot; 5.2 miles away
-                                    </div>
-                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 list-right-detail text-muted">
-                                        <a href="#">{{paper-icon icon="delete" size="lg"}}</a>
-                                    </div>
-                                </div>
-                            {{/paper-tile-content}}
-
-                        {{/paper-item}}
-                    </div>
-                    {{paper-divider}}
-                {{else}}
-                    {{#paper-item}}
-
-                        {{#paper-tile-content}}
-                            None :-(
-                        {{/paper-tile-content}}
-
-                    {{/paper-item}}
-                {{/each}}
-            {{/paper-list}}
-        {{/paper-content}}
+        {{places-list latitude=1234 longitude=1234 beer=1234}}
 
     </div>
 </div>
