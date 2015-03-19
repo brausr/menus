@@ -5,7 +5,16 @@ import {
 
 moduleForComponent('places-list', {
   // specify the other units that are required for this test
-  // needs: ['component:foo', 'helper:bar']
+  needs: [
+      'component:paper-content',
+      'component:paper-button',
+      'component:paper-list',
+      'component:paper-item',
+      'component:paper-tile-left',
+      'component:paper-tile-content',
+      'component:paper-icon',
+      'component:paper-checkbox'
+  ]
 });
 
 test('it renders', function(assert) {

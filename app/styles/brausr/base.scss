@@ -104,7 +104,11 @@ div.unverified {
         margin: 16px;
 
         .md-container {
-            left: 16px;
+            left: 15px;
+        }
+
+        .md-label {
+            display: none;
         }
     }
 }
