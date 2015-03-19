@@ -31,25 +31,3 @@ ul.place-hours {
 p.place-tagline {
     font-style: italic;
 }
-
-div.unverified-beer {
-    background-color: lighten($brand-divider, 20%);
-    text-decoration: line-through;
-
-    .list-left-detail {
-        text-decoration: line-through;
-    }
-
-    .list-right-detail {
-        text-decoration: line-through;
-    }
-
-    md-checkbox {
-        width: 48px;
-        margin: 16px;
-
-        .md-container {
-            left: 16px;
-        }
-    }
-}

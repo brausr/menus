@@ -8,17 +8,28 @@
             {{#paper-card-content}}
                 <h2>{{model.name}}</h2>
                 <h4 class="text-muted">{{model.brewery}}</h4>
-                <p>{{model.desc}}</p>
                 <div class="row">
                     <div class="col-lg-8">
-                        <strong>Style:</strong> <span class="text-muted">{{model.style}}</span><br />
-                        <strong><abbr title="Alcohol By Volume">ABV:</abbr></strong> <span class="text-muted">{{model.abv}}%</span><br />
-                        <strong>Available:</strong> <span class="text-muted">{{model.available}}</span>
+                        <div class="row">
+                            <div class="col-lg-12">{{model.style}}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 text-muted">
+                                {{model.abv}}% &sdot; {{model.available}}
+                            </div>
+                        </div>
                     </div>
                     <div class="col-lg-4 pull-right">
                         {{#paper-button raised=true classNames="md-primary"}}Add to Favorites{{/paper-button}}
                     </div>
                 </div>
+            {{/paper-card-content}}
+        {{/paper-card}}
+
+        {{#paper-card classNames="beer-detail-card"}}
+            {{#paper-card-content}}
+                <dt>Description</dt>
+                <p>{{model.desc}}</p>
             {{/paper-card-content}}
         {{/paper-card}}
 
@@ -32,26 +43,32 @@
         {{#paper-content classNames="md-whiteframe-z1 list-demo"}}
             {{#paper-list}}
                 {{#each place in model.places}}
-                    {{#paper-item}}
+                    <div {{bind-attr class="place.verified::unverified"}}>
+                        {{#paper-item}}
 
-                        {{#paper-tile-left}}
-                            <img {{bind-attr src=place.img alt=place.name}} class="avatar">
-                        {{/paper-tile-left}}
+                            {{#paper-tile-left}}
+                                {{#if place.verified}}
+                                    <img {{bind-attr src=place.img alt=place.name}} class="avatar">
+                                {{else}}
+                                    {{paper-checkbox value=place.verified}}
+                                {{/if}}
+                            {{/paper-tile-left}}
 
-                        {{#paper-tile-content}}
-                            <h3>{{#link-to 'place.index' place}}{{place.name}}{{/link-to}}</h3>
-                            <h4>Beers: {{place.menu.length}}</h4>
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 list-left-detail text-muted">
-                                    Updated {{place.updated}}
+                            {{#paper-tile-content}}
+                                <h3>{{#link-to 'place.index' place}}{{place.name}}{{/link-to}}</h3>
+                                <h4>Beers: {{place.menu.length}}</h4>
+                                <div class="row">
+                                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 list-left-detail text-muted">
+                                        Updated {{place.updated}} &sdot; 5.2 miles away
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 list-right-detail text-muted">
+                                        <a href="#">{{paper-icon icon="delete" size="lg"}}</a>
+                                    </div>
                                 </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 list-right-detail text-muted">
-                                    5.2 miles away
-                                </div>
-                            </div>
-                        {{/paper-tile-content}}
+                            {{/paper-tile-content}}
 
-                    {{/paper-item}}
+                        {{/paper-item}}
+                    </div>
                     {{paper-divider}}
                 {{else}}
                     {{#paper-item}}

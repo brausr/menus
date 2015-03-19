@@ -84,3 +84,71 @@ md-toolbar.md-default-theme {
 md-checkbox.md-default-theme.md-checked .md-icon {
     background-color: $brand-accent !important;
 }
+
+
+//
+div.unverified {
+    background-color: lighten($brand-divider, 20%);
+    text-decoration: line-through;
+
+    .list-left-detail {
+        text-decoration: line-through;
+    }
+
+    .list-right-detail {
+        text-decoration: line-through;
+    }
+
+    md-checkbox {
+        width: 48px;
+        margin: 16px;
+
+        .md-container {
+            left: 16px;
+        }
+    }
+}
+
+// search
+.brausr-search {
+
+    div.search-wrapper {
+        background: rgba(255, 255, 255, .15);
+        border-radius: 2px;
+        position: relative;
+        display: flex;
+        flex: 1;
+
+        div.icon-wrapper {
+            display: inline-block;
+            height: 36px;
+            position: relative;
+            width: 72px;
+            padding: 5px;
+        }
+
+        div.input-wrapper {
+            position: relative;
+            flex: 1;
+
+            input {
+                background: none;
+                border: none;
+                box-sizing: border-box;
+                color: #FFF;
+                display: block;
+                font-size: 1em;
+                height: 36px;
+                position: absolute;
+                width: 100%;
+            }
+        }
+    }
+}
+
+// user
+.user-avatar {
+    float: right;
+    height: 36px;
+    border-radius: 36px;
+}

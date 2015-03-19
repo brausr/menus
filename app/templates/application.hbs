@@ -24,13 +24,28 @@
   {{#paper-content flex-layout="column" flex=true}}
 
       {{#paper-toolbar}}
-        <div class="md-toolbar-tools">
+        <div class="md-toolbar-tools col-lg-12">
 
-          {{#paper-sidenav-toggle}}
-            {{#paper-icon icon="menu" size="lg"}}{{/paper-icon}}
-          {{/paper-sidenav-toggle}}
-
-          {{currentPath}}
+            <div class="row" style="width:100%;">
+                <div class="visible-xs visible-sm col-sm-1 col-xs-1">
+                    {{#paper-sidenav-toggle}}
+                        {{#paper-icon icon="menu" size="lg"}}{{/paper-icon}}
+                    {{/paper-sidenav-toggle}}
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 brausr-search">
+                    <div class="search-wrapper">
+                        <div class="icon-wrapper">
+                            {{paper-icon icon="search" size="lg"}}
+                        </div>
+                        <div class="input-wrapper">
+                            <input placeholder="Search Brausr" type="text" tabindex="0" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-2 col-xs-2">
+                    {{#link-to 'me'}}<img src="http://placehold.it/80x80" alt="You" class="user-avatar" />{{/link-to}}
+                </div>
+            </div>
 
         </div>
       {{/paper-toolbar}}

@@ -6,29 +6,30 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-    // places
-    this.resource('places', function () {
-      this.route('add');
-    });
+  // places
+  this.resource('places', function () {
+    this.route('add');
+  });
 
-    this.resource('place', { path: 'place/:id' }, function () {
-      this.route('edit');
-    });
+  this.resource('place', { path: 'place/:id' }, function () {
+    this.route('edit');
+  });
 
-    // Favorites
-    this.resource('favorites', function () {
+  // Favorites
+  this.resource('favorites', function () {
 
-    });
+  });
 
-    // Beer
-    this.resource('beer', { path: 'beer/:id' }, function () {
+  // Beer
+  this.resource('beer', { path: 'beer/:id' }, function () {
 
-    });
+  });
 
-    // Settings
-    this.route('settings');
+  // Settings
+  this.route('settings');
 
-    // ...
+  // User
+  this.route('me');
 });
 
 export default Router;
