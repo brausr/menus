@@ -61,39 +61,47 @@
             </div>
         </div>
 
-        {{#paper-content classNames="md-whiteframe-z1 list-demo"}}
-            {{#paper-list}}
-                {{#each beer in model.menu}}
-                    <div {{bind-attr class="beer.verified::unverified"}}>
-                        {{#paper-item}}
+        {{#if model.menu}}
+            {{#paper-content classNames="md-whiteframe-z1 list-demo"}}
+                {{#paper-list}}
+                    {{#each beer in model.menu}}
+                        <div {{bind-attr class="beer.verified::unverified"}}>
+                            {{#paper-item}}
 
-                            {{#paper-tile-left}}
-                                {{#if beer.verified}}
-                                    <img {{bind-attr src=beer.img alt=beer.name}} class="avatar">
-                                {{else}}
-                                    {{paper-checkbox value=beer.verified}}
-                                {{/if}}
-                            {{/paper-tile-left}}
+                                {{#paper-tile-left}}
+                                    {{#if beer.verified}}
+                                        <img {{bind-attr src=beer.img alt=beer.name}} class="avatar">
+                                    {{else}}
+                                        {{paper-checkbox value=beer.verified}}
+                                    {{/if}}
+                                {{/paper-tile-left}}
 
-                            {{#paper-tile-content}}
-                                <h3>{{#link-to 'beer.index' beer}}{{beer.name}}{{/link-to}}</h3>
-                                <h4>Brewery Name</h4>
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 list-left-detail text-muted">
-                                        {{beer.style}} &sdot; {{beer.abv}}%
+                                {{#paper-tile-content}}
+                                    <h3>{{#link-to 'beer.index' beer}}{{beer.name}}{{/link-to}}</h3>
+                                    <h4>Brewery Name</h4>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 list-left-detail text-muted">
+                                            {{beer.style}} &sdot; {{beer.abv}}%
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 list-right-detail text-muted">
+                                            <a href="#">{{paper-icon icon="delete" size="lg"}}</a>
+                                        </div>
                                     </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 list-right-detail text-muted">
-                                        <a href="#">{{paper-icon icon="delete" size="lg"}}</a>
-                                    </div>
-                                </div>
-                            {{/paper-tile-content}}
+                                {{/paper-tile-content}}
 
-                        {{/paper-item}}
-                    </div>
-                    {{paper-divider}}
-              {{/each}}
-            {{/paper-list}}
-        {{/paper-content}}
+                            {{/paper-item}}
+                        </div>
+                        {{paper-divider}}
+                    {{/each}}
+                {{/paper-list}}
+            {{/paper-content}}
+        {{else}}
+            <div class="row">
+                <div class="col-lg-12 text-muted">
+                    <i>No beers available :-(</i>
+                </div>
+            </div>
+        {{/if}}
 
     </div>
 </div>

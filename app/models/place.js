@@ -44,6 +44,7 @@ export default DS.Model.extend(EmberValidations.Mixin, {
   // TODO hours
 
   // TODO menu
+  menu: [],
 
   // validations
   validations: {
@@ -58,8 +59,6 @@ export default DS.Model.extend(EmberValidations.Mixin, {
         presence: true
       }
   },
-
-  // computed properties
 
   // fuzzy time since updated
   sinceUpdated: function () {
