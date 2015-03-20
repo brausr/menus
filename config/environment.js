@@ -5,7 +5,7 @@ module.exports = function(environment) {
     modulePrefix: 'menus',
     environment: environment,
     contentSecurityPolicy: {
-        'connect-src': "'self' wss://*.firebaseio.com maps.gstatic.com",
+        'connect-src': "'self' wss://*.firebaseio.com maps.gstatic.com maps.googleapis.com",
         'default-src': "'none'",
         'script-src': "'self' 'unsafe-eval' *.googleapis.com maps.gstatic.com",
         'font-src': "'self' fonts.gstatic.com",

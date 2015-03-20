@@ -9,4 +9,9 @@ var app = new EmberApp({
     }
 });
 
+// snackbarjs
+app.import('bower_components/snackbarjs/dist/snackbar.min.css');
+app.import('bower_components/snackbarjs/themes-css/material.css');
+app.import('bower_components/snackbarjs/dist/snackbar.min.js');
+
 module.exports = app.toTree();

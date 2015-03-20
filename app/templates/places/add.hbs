@@ -1,3 +1,22 @@
-<div class="col-lg-12">
-    Add Place
+<h3>Add Place</h3>
+
+<div class="row">
+    <div class="col-lg-6">
+        {{paper-text label="Name" value=model.name}}
+        <p class="text-muted"><i>ex: Victory Brewing Company</i></p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-6">
+        {{geocode-paper-text label="Address" target=controller}}
+        <p class="text-muted"><i>ex: 420 Acorn Ln Downingtown, PA 19335</i></p>
+    </div>
+</div>
+
+<div class="row row-top text-right">
+    <div class="col-lg-6">
+        {{#link-to 'places.index'}}{{#paper-button classNames="md-warn"}}Cancel{{/paper-button}}{{/link-to}}
+        {{#paper-button raised=true classNames="md-primary" disabled=true action="addPlace"}}Add{{/paper-button}}
+    </div>
 </div>

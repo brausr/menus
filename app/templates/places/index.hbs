@@ -4,15 +4,15 @@
 
         <div class="row row-bottom">
             <div class="col-lg-4">
-                {{#paper-button raised=true classNames="md-primary"}}Add Place{{/paper-button}}
+                {{#link-to 'places.add'}}{{#paper-button raised=true classNames="md-primary"}}Add Place{{/paper-button}}{{/link-to}}
             </div>
         </div>
 
-        {{places-list latitude=1234 longitude=1234 beer=null}}
+        {{places-list latitude=1234 longitude=1234 places=model beer=null}}
     </div>
 
-    <!-- Map -->
+    <!-- TODO Map? -->
     <div class="col-lg-6 visible-lg">
-        Placeholder
+
     </div>
 </div>

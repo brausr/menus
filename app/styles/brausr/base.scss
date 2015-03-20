@@ -4,11 +4,23 @@
 }
 
 // TODO workaround for ember-paper side nav
-body > div:nth-of-type(1) {
+body > div:nth-of-type(1):not(#snackbar-container) {
     height: 100%;
 }
 
-body > div:nth-of-type(3) {
+body > div:nth-of-type(2):not(#snackbar-container) {
+    height: 100%;
+}
+
+body > div:nth-of-type(3):not(#snackbar-container) {
+    height: 100%;
+}
+
+body > div:nth-of-type(4):not(#snackbar-container) {
+    height: 100%;
+}
+
+body > div:nth-of-type(5):not(#snackbar-container) {
     height: 100%;
 }
 
@@ -85,6 +97,26 @@ md-checkbox.md-default-theme.md-checked .md-icon {
     background-color: $brand-accent !important;
 }
 
+// input overrides
+md-input-group.md-default-theme input {
+    width: 100%;
+}
+
+md-input-group.md-default-theme.md-input-focused {
+
+    label {
+        color: $brand-accent !important;
+    }
+
+    input {
+        color: $brand-accent !important;
+        border-color: $brand-accent !important;
+    }
+
+    textarea {
+        border-color: $brand-accent !important;
+    }
+}
 
 //
 div.unverified {
