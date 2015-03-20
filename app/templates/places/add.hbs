@@ -17,6 +17,6 @@
 <div class="row row-top text-right">
     <div class="col-lg-6">
         {{#link-to 'places.index'}}{{#paper-button classNames="md-warn"}}Cancel{{/paper-button}}{{/link-to}}
-        {{#paper-button raised=true classNames="md-primary" disabled=true action="addPlace"}}Add{{/paper-button}}
+        {{#paper-button noink=model.invalid raised=true classNameBindings="model.invalid::md-primary" disabled=model.invalid action="addPlace"}}Add{{/paper-button}}
     </div>
 </div>

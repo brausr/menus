@@ -1,6 +1,7 @@
 /* global moment:true */
 import DS from 'ember-data';
 import EmberValidations from 'ember-validations';
+import config from '../config/environment';
 
 export default DS.Model.extend(EmberValidations.Mixin, {
 
@@ -49,6 +50,12 @@ export default DS.Model.extend(EmberValidations.Mixin, {
       name: {
         presence: { message: 'Name is required' },
         length: { maximum: 255 }
+      },
+      latitude: {
+        presence: true
+      },
+      longitude: {
+        presence: true
       }
   },
 
@@ -57,5 +64,28 @@ export default DS.Model.extend(EmberValidations.Mixin, {
   // fuzzy time since updated
   sinceUpdated: function () {
     return moment.unix(this.get('created')).fromNow();
-  }.property('created')
+  }.property('created'),
+
+  // helper used to bind until model is valid
+  invalid: function () {
+    return !this.get('isValid');
+  }.property('isValid'),
+
+  // static google map url
+  mapUrl: function () {
+    var url = 'https://maps.googleapis.com/maps/api/staticmap';
+
+    // map parameters
+    url += '?size=450x144';
+    url += '&scale=2';
+    url += '&zoom=13';
+    url += '&key=' + config.googleMap.apiKey;
+    url += '&sensor=false';
+    url += '&markers=color:orange%7Clabel:P%7C';
+    url += this.get('latitude');
+    url += ',' + this.get('longitude');
+
+    return url;
+  }.property('latitude', 'longitude')
+
 });

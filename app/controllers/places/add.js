@@ -11,11 +11,11 @@ export default Ember.Controller.extend(NotifyMixin, {
 
             // valid place
             if (place.get('isValid')) {
-                /*place.save().then(() => {
+                place.save().then(() => {
                     this.transitionToRoute('place', place);
                 }).catch(() => {
                     this.notify('error', 'An error occurred saving place');
-                });*/
+                });
             }
         },
 
@@ -45,17 +45,17 @@ export default Ember.Controller.extend(NotifyMixin, {
                     Ember.$.each(addressComponents, function () {
                         var type = this.types[0];
 
-                        if (type === 'street number') {
+                        if (type === 'street_number') {
                             streetNumber = this.short_name;
                         } else if (type === 'route') {
                             route = this.short_name;
                         } else if (type === 'locality') {
                             city = this.short_name;
-                        } else if (type === 'administrative area level 1') {
+                        } else if (type === 'administrative_area_level_1') {
                             state = this.short_name;
                         } else if (type === 'country') {
                             country = this.short_name;
-                        } else if (type === 'postal code') {
+                        } else if (type === 'postal_code') {
                             zip = this.short_name;
                         }
                     });

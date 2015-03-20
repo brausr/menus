@@ -17,13 +17,13 @@
 
         <!-- Location -->
         {{#paper-card}}
-            <img src="https://maps.googleapis.com/maps/api/staticmap?size=450x144&scale=2&zoom=13&key=AIzaSyC4HGtjwmR5zmmgFcUSO9kVsD6fxKSaA2I&sensor=false&markers=color:orange%7Clabel:P%7C39.95022100,-75.16658300" alt="Location">
+            <img {{bind-attr src=model.mapUrl}} alt="Location">
             {{#paper-card-content}}
                 <div class="row">
                     <div class="col-lg-8">
                         <address>
-                            123 Fake St.<br />
-                            Anytown, PA 19382<br />
+                            {{model.address1}}<br />
+                            {{model.city}}, {{model.state}} {{model.zip}}<br />
                             <abbr title="Phone">P:</abbr> <a href="#">215-267-2222</a>
                         </address>
                         <div class="row">
